@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Issue New Certificate</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <link rel='stylesheet' href='/stylesheets/issueStyle.css' />
+
+</head>
+
+<body>
+
+  <div class="header">
+    <a href="#default" class="logo">Certificate DApp</a>
+    <div class="header-right">
+      <a href="/">Home</a>
+      <a class="active" href="/issue">Issue Certificate</a>
+    </div>
+  </div>
+
+  <br/>
+  <div class="entry-form">
+    <h3>Issue New Certificate</h3>
+    <p class="form-success bg-success <%= messageClass %>" >Certificate issued successfully. Number is <%= certificateID %> </p>
+    <form id="needs-validation" class="<%= formClass %>" action="/issue" method="POST">
+      <div class="form-group">
+        <label for="courseName">Select Course *</label>
+        <select class="form-control" name="courseName" id="courseName">
+          <option>MSc in Blockchain Technologies</option>
+          <option>BSc in Blockchain Technologies</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="certificateID">Certificate ID *</label>
+        <input type="text" class="form-control" name="certificateID" id="certificateID" placeholder="Certificate ID" required>
+      </div>
+      <div class="form-group">
+        <label for="candidateName">Candidate name *</label>
+        <input type="text" class="form-control" name="candidateName" id="candidateName" placeholder="Name" required>
+      </div>
+      <div class="form-group">
+        <label for="grade">Select Grade *</label>
+        <select class="form-control" id="grade" name="grade" id="grade">
+          <option>S</option>
+          <option>A</option>
+          <option>B</option>
+          <option>C</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="date">Issue Date *</label>
+        <input type="date" class="form-control" id="date" name="date" required>
+      </div>
+
+      <button type="submit" class="btn btn-info">Issue Certificate</button>
+    </form>
+  </div>
+
+</body>
+
+</html>
